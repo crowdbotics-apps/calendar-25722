@@ -1,0 +1,53 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/backend"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  labels:
+  - dependencies
+  - python
+  ignore:
+  - dependency-name: boto3
+    versions:
+    - 1.17.53
+    - 1.17.54
+    - 1.17.55
+    - 1.17.56
+    - 1.17.57
+    - 1.17.58
+    - 1.17.59
+    - 1.17.60
+  - dependency-name: django-extensions
+    versions:
+    - 3.1.2
+  commit-message:
+    prefix: Crowdbotics
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  labels:
+  - dependencies
+  - javascript
+  ignore:
+  - dependency-name: "@babel/runtime"
+    versions:
+    - 7.13.16
+    - 7.13.17
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.13.16
+  - dependency-name: react-native-elements
+    versions:
+    - 3.4.0
+  - dependency-name: eslint
+    versions:
+    - 7.24.0
+  - dependency-name: metro-react-native-babel-preset
+    versions:
+    - 0.66.0
+  commit-message:
+    prefix: Crowdbotics
